@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>createObject</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<script>
+
+		//Constructor Function that returns object
+		function Airplane(model, seatingcapacity,maximumspeed) {
+		var one = {
+		model: model,
+		seatingcapacity:seatingcapacity,
+		maximumspeed: maximumspeed,
+		print: function(){
+		document.write("Model " + this.model + " seating " + this.seatingcapacity + " max speed " +this.maximumspeed);
+		}
+		}
+		return one
+		}
+
+		//Airplane objects created
+		var airplaneA = new Airplane("AAA", 10, "200mph" + "<br>");
+		var airplaneB = new Airplane("BBB", 20, "300mph" + "<br>");
+		var airplaneC = new Airplane("CCC", 30, "500mph" + "<br>");
+
+		//Airplane objects and their prints
+		function callPrint (){
+		airplaneA.print();
+		airplaneB.print();
+		airplaneC.print();
+		}
+		callPrint();
+
+		//function increases seating capacity
+		function increaseseatingcap (){
+		airplaneA.seatingcapacity+=10;
+		airplaneB.seatingcapacity+=10;
+		airplaneC.seatingcapacity+=10;
+		document.write("Increased seating capacity " + airplaneA.seatingcapacity + "<br>");
+		document.write("Increased seating capacity " + airplaneB.seatingcapacity + "<br>");
+		document.write("Increased seating capacity " + airplaneC.seatingcapacity + "<br>");
+		}
+		increaseseatingcap ();
+
+		//delete function created, eliminates maximum speed
+		function deleteMaxSpeed(){
+		delete airplaneA.maximumspeed;
+		delete airplaneB.maximumspeed;
+		delete airplaneC.maximumspeed;
+		airplaneA.print();
+		airplaneB.print();
+		airplaneC.print();
+		}
+		deleteMaxSpeed();
+
+		//New property Average speed created
+		function addAverageSpeed(){
+		airplaneA.averageSpeed= 600;
+		airplaneB.averageSpeed= 600;
+		airplaneC.averageSpeed= 600;
+		document.write("<br>" + "Airlplane A average speed " + airplaneA.averageSpeed + "<br>");
+		document.write("Airlplane B average speed " + airplaneB.averageSpeed + "<br>");
+		document.write("Airlplane C average speed " + airplaneC.averageSpeed);
+		} 
+		addAverageSpeed();   
+	</script>
+</body>
+</html>
